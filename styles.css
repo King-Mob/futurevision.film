@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-family: "aileron", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  transform: rotate3d(1, 1, 1, 17deg);
+  overflow: hidden;
+}
+
+button {
+  font-family: "aileron", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  background-color: white;
+}
+
+button:hover {
+  background-color: grey;
+}
+
+#enter-button {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 0px 10px black;
+}
+
+.circle {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  box-shadow: 0px 0px 10px black;
+}
+
+.circle:hover {
+  background-color: grey;
+}
+
+.letter {
+  margin-top: 1rem;
+  user-select: none;
+}
+
+@keyframes inAndThrough {
+  from {
+    font-size: 16px;
+    opacity: 1;
+  }
+  to {
+    font-size: 100px;
+    opacity: 0;
+  }
+}

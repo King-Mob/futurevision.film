@@ -1,23 +1,31 @@
 //place text in circles
 
-const circleRotations = [-45, 90, 45];
-//const circleRotations = [0, 0, -45];
-
-const enter = () => {
-    const lockContainer = document.getElementById("lock-container");
-    lockContainer.style.animation = "inAndThrough 5s forwards";
-
-    setTimeout(() => {
-        lockContainer.style.display = "none";
-    }, 5000)
-
-    const descriptionContainer = document.getElementById("description-container");
-    descriptionContainer.style.display = "flex";
-    descriptionContainer.style.animation = "fromBehind 5s forwards";
-}
+//const circleRotations = [-45, 90, 45];
+const circleRotations = [0, 0, -45];
 
 const circles = document.getElementsByClassName("circle");
 const enterButton = document.getElementById("enter-button");
+
+const enter = () => {
+    enterButton.style.animation = `lockIn 5s forwards`;
+    let offset = 1.5;
+    let index = 0
+    for (const circle of circles) {
+        if (index > 0) {
+            circle.style.animation = `lockIn 5s ${offset}s forwards`;
+        }
+        else {
+            circle.style.animation = `fadeIn 4s 1s reverse forwards`;
+        }
+        index++
+        offset -= 0.5;
+    }
+
+
+    const descriptionContainer = document.getElementById("description-circle");
+    descriptionContainer.style.display = "flex";
+    descriptionContainer.style.animation = "fadeIn 5s 2s forwards";
+}
 
 let index = 0;
 for (const circle of circles) {

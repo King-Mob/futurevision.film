@@ -90,6 +90,7 @@ button:hover {
   align-items: center;
   overflow: hidden;
   z-index: -1;
+  opacity: 0;
 }
 
 #title {

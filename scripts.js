@@ -7,24 +7,23 @@ const circles = document.getElementsByClassName("circle");
 const enterButton = document.getElementById("enter-button");
 
 const enter = () => {
+
+    const circle1 = document.getElementById("circle1");
+    const circle2 = document.getElementById("circle2");
+    const circle3 = document.getElementById("circle3");
+
+
     enterButton.style.animation = `lockIn 5s forwards`;
-    let offset = 1.5;
-    let index = 0
-    for (const circle of circles) {
-        if (index > 0) {
-            circle.style.animation = `lockIn 5s ${offset}s forwards`;
-        }
-        else {
-            circle.style.animation = `fadeIn 4s 1s reverse forwards`;
-        }
-        index++
-        offset -= 0.5;
+    circle3.style.animation = "lockIn 5s 0.5s forwards";
+    circle2.style.animation = "lockIn 5s 1s forwards";
+    circle1.style.animation = "lockIn 5s 1.5s forwards";
+
+    for (const child of circle1.children) {
+        child.style.animation = "fadeIn reverse 4s 1.5s forwards";
     }
 
-
     const descriptionContainer = document.getElementById("description-circle");
-    descriptionContainer.style.display = "flex";
-    descriptionContainer.style.animation = "fadeIn 5s 2s forwards";
+    descriptionContainer.style.animation = "fadeIn 3s 1s forwards";
 }
 
 let index = 0;

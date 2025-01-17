@@ -1,6 +1,32 @@
 //place text in circles
 
-//const circleRotations = [-45, 90, 45];
+const descriptionText = document.getElementById("description-text");
+const letters = descriptionText.innerHTML.split("");
+descriptionText.innerHTML = '';
+letters.forEach((letter, i) => {
+    const letterSpan = document.createElement("span");
+    letterSpan.innerHTML = letter;
+    letterSpan.classList.add("letter-description");
+    const angle = 6 * i;
+    letterSpan.style.transform = `rotate(${angle}deg) translate(-11rem) rotate(-${angle}deg)`;
+    descriptionText.append(letterSpan);
+})
+
+const emailText = document.getElementById("email-text");
+const emailLetters = emailText.innerHTML.split("");
+emailText.innerHTML = '';
+emailLetters.forEach((letter, i) => {
+    const letterSpan = document.createElement("span");
+    letterSpan.innerHTML = letter;
+    letterSpan.classList.add("letter-email");
+    const angle = 250 + 6 * i;
+    letterSpan.style.transform = `rotate(-${angle}deg) translate(11rem) rotate(${angle}deg)`;
+    emailText.append(letterSpan);
+})
+
+const randomPosition = () => 45 + Math.round(Math.random() * 6) * 45;
+
+//const circleRotations = [randomPosition(), randomPosition(), randomPosition()];
 const circleRotations = [0, 0, -45];
 
 const circles = document.getElementsByClassName("circle");
@@ -30,7 +56,7 @@ let index = 0;
 for (const circle of circles) {
     const letters = circle.innerHTML.split("");
     circle.innerHTML = '';
-    letters.map(letter => {
+    letters.forEach(letter => {
         const letterSpan = document.createElement("span");
         letterSpan.innerHTML = letter;
         letterSpan.classList.add("letter");
@@ -49,10 +75,12 @@ for (const circle of circles) {
         if (circleRotations.reduce((prev, current) => prev + current) === 0) {
             enterButton.onclick = enter;
             enterButton.innerHTML = "Enter";
+            enterButton.classList.remove("wrong");
         }
         else {
             enterButton.onclick = () => { };
             enterButton.innerHTML = "";
+            enterButton.classList.add("wrong");
         }
     }
 

@@ -42,17 +42,17 @@ button {
   background-color: white;
 }
 
-button:hover {
-  background-color: grey;
-}
-
 #enter-button {
   height: 5em;
   width: 5em;
   border-radius: 50%;
   cursor: pointer;
   border: none;
-  box-shadow: 0px 0px 10px black;
+  box-shadow: 0px 0px 10px #c32f27;
+}
+
+.wrong:active {
+  background-color: #c32f27;
 }
 
 .circle {
@@ -65,11 +65,18 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  box-shadow: 0px 0px 10px black;
 }
 
-.circle:hover {
-  background-color: grey;
+#circle1 {
+  box-shadow: 0px 0px 10px #f7b538;
+}
+
+#circle2 {
+  box-shadow: 0px 0px 10px #90a972;
+}
+
+#circle3 {
+  box-shadow: 0px 0px 10px #2978d9;
 }
 
 .letter {
@@ -113,6 +120,24 @@ button:hover {
   font-weight: 200;
 }
 
+#letter-container {
+  margin-top: -1rem;
+  margin-left: -1rem;
+}
+
+.letter-description {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+}
+
+.letter-email {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 1rem;
+}
+
 #description-text {
   padding: 0rem 2rem;
   text-align: center;
@@ -122,7 +147,7 @@ button:hover {
 }
 
 #email-text {
-  margin-top: 1rem;
+  transform: rotate(30deg);
 }
 
 @keyframes lockIn {

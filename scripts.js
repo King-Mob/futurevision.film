@@ -51,6 +51,10 @@ const enter = () => {
 
   const descriptionContainer = document.getElementById("description-circle");
   descriptionContainer.style.animation = "fadeIn 3s 1s forwards";
+
+  setTimeout(() => {
+    circle1.style.zIndex = "-1";
+  }, 6000);
 };
 
 let index = 0;

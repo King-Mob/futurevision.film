@@ -27,6 +27,9 @@ body {
   font-size: var(--base-size);
   margin-top: 30vh;
   margin-left: 3vw;
+  height: 26rem;
+  width: 26rem;
+  overflow: hidden;
 }
 
 button {

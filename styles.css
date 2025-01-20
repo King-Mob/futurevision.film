@@ -108,6 +108,7 @@ button {
 
 #email-container {
   position: relative;
+  transform: rotate(7deg);
 }
 
 .email-text {

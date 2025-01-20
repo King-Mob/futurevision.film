@@ -12,9 +12,9 @@ const enter = () => {
   const circle3 = document.getElementById("circle3");
 
   enterButton.style.animation = `lockIn 5s forwards`;
-  circle3.style.animation = "lockIn 5s 0.5s forwards";
-  circle2.style.animation = "lockIn 5s 1s forwards";
-  circle1.style.animation = "lockIn 5s 1.5s forwards";
+  circle3.style.animation = "lockInClockwise 5s 0.5s forwards";
+  circle2.style.animation = "lockInAnticlockwise 5s 1s forwards";
+  circle1.style.animation = "lockInClockwise 5s 1.5s forwards";
 
   for (const child of circle1.children) {
     child.style.animation = "fadeIn reverse 4s 1.5s forwards";

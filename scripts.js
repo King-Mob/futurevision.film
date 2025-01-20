@@ -1,36 +1,7 @@
-//place text in circles
-
-/*
-const descriptionText = document.getElementById("description-text");
-const letters = descriptionText.innerHTML.split("");
-descriptionText.innerHTML = '';
-letters.forEach((letter, i) => {
-    const letterSpan = document.createElement("span");
-    letterSpan.innerHTML = letter;
-    letterSpan.classList.add("letter-description");
-    const angle = 6 * i;
-    letterSpan.style.transform = `rotate(${angle}deg) translate(-11rem) rotate(-${angle}deg)`;
-    descriptionText.append(letterSpan);
-})*/
-
-/*
-const emailText = document.getElementById("email-text");
-const emailLetters = emailText.innerHTML.split("");
-emailText.innerHTML = '';
-emailLetters.forEach((letter, i) => {
-    const letterSpan = document.createElement("span");
-    letterSpan.innerHTML = letter;
-    letterSpan.classList.add("letter-email");
-    const angle = 250 + 6 * i;
-    letterSpan.style.transform = `rotate(-${angle}deg) translate(11rem) rotate(${angle}deg)`;
-    emailText.append(letterSpan);
-})
-*/
-
 const randomPosition = () => 45 + Math.round(Math.random() * 6) * 45;
 
-//const circleRotations = [randomPosition(), randomPosition(), randomPosition()];
-const circleRotations = [0, 0, -45];
+const circleRotations = [randomPosition(), randomPosition(), randomPosition()];
+//const circleRotations = [0, 0, -45];
 
 const circles = document.getElementsByClassName("circle");
 const enterButton = document.getElementById("enter-button");

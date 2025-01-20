@@ -1,15 +1,10 @@
-@font-face {
-  font-family: "Aujournuit-Wide";
-  src: url("Aujournuit-Wide.woff2") format("woff2");
-}
-
 :root {
   --base-size: 20px;
 }
 
 html {
   font-size: 16px;
-  font-family: "Aujournuit-Wide", serif;
+  font-family: "aileron", sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 100%;
@@ -35,7 +30,7 @@ body {
 }
 
 button {
-  font-family: "Aujournuit-Wide", serif;
+  font-family: "aileron", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1em;
@@ -83,12 +78,46 @@ button {
   margin-top: 1em;
   user-select: none;
 }
-
+/*
 #description-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   transform: rotate3d(1, 1, 1, 17deg);
+}*/
+
+#description-container {
+  position: relative;
+  transform: translate(-0.5rem, 0rem) rotate(-45deg);
+}
+
+:root {
+  --angle: 6.25deg;
+  --email-angle: -6.25deg;
+}
+
+.description-container-span {
+  width: 1em;
+  white-space: nowrap;
+  text-indent: calc(var(--i) * -1em);
+  overflow: hidden;
+  position: absolute;
+  transform: rotate(calc(var(--angle) * var(--i)))
+    translateY(calc(-1em / sin(var(--angle))));
+}
+
+#email-container {
+  position: relative;
+}
+
+.email-text {
+  width: 1em;
+  white-space: nowrap;
+  text-indent: calc(var(--i) * -1em);
+  overflow: hidden;
+  position: absolute;
+  transform: rotate(calc(var(--email-angle) * var(--i)))
+    translateY(calc(-0.96em / sin(var(--email-angle))));
 }
 
 #description-circle {
@@ -146,10 +175,6 @@ button {
   font-weight: 300;
 }
 
-#email-text {
-  transform: rotate(30deg);
-}
-
 @keyframes lockIn {
   0% {
     box-shadow: 0px 0px 10px black;
@@ -162,6 +187,7 @@ button {
   100% {
     box-shadow: none;
     opacity: 0;
+    z-index: -10;
   }
 }
 

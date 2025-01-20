@@ -30,6 +30,7 @@ const enter = () => {
 
 let index = 0;
 for (const circle of circles) {
+  /*
   const letters = circle.innerHTML.split("");
   circle.innerHTML = "";
   letters.forEach((letter) => {
@@ -38,7 +39,7 @@ for (const circle of circles) {
     letterSpan.classList.add("letter");
     // letterSpan.style.transform = "rotate(-30deg) translate(-90%)";
     circle.append(letterSpan);
-  });
+  });*/
 
   circle.style.transform = `rotate(${circleRotations[index]}deg)`;
   const circleIndex = index;

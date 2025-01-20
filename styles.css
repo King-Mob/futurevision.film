@@ -77,10 +77,10 @@ button {
   box-shadow: 0px 0px 10px #2978d9;
 }
 
-.letter {
-  margin-top: 1em;
-  user-select: none;
+.circle p {
+  margin-top: 0.75rem;
 }
+
 /*
 #description-container {
   display: flex;
